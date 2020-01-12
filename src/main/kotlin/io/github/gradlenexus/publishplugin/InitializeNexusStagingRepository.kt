@@ -23,7 +23,6 @@ import org.gradle.api.artifacts.repositories.MavenArtifactRepository
 import org.gradle.api.model.ObjectFactory
 import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.property
 import org.gradle.kotlin.dsl.the
@@ -40,7 +39,6 @@ constructor(
     private val stagingRepositoryId: (String) -> Unit
 ) : AbstractNexusStagingRepositoryTask(objects, extension, repository) {
 
-    @Optional
     @Input
     val packageGroup = objects.property<String>().apply {
         set(extension.packageGroup)
